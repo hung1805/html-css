@@ -1,3 +1,18 @@
+const sideBar = document.querySelector(".sidebar");
+const overlay = document.querySelector(".overlay");
+const linkItems = document.querySelectorAll(".sidebar .sidebar__item");
+const showList = () => {
+  sideBar.style.left = "0";
+  overlay.style.display = "block";
+};
+const hideList = () => {
+  sideBar.style.left = "-100%";
+  overlay.style.display = "none";
+};
+linkItems.forEach((item) => {
+  item.addEventListener("click", hideList);
+});
+
 const swiper = new Swiper(".swiper", {
   // Optional parameters
   slidesPerView: 2,
